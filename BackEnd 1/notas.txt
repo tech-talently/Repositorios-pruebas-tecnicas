@@ -1,0 +1,36 @@
+1. bowling.scoringapp.main
+Run:
+  - Leer nombre archivo como argumento y llamar a ReadFile
+
+*** SERVICES ***
+2. bowling.scoringapp.read.input.api
+IReadInput
+
+bowling.scoringapp.read.input.impl
+ReadTenPinBowlFile:
+  - Parsear archivo con scores a objetos (map con participante y arreglo de frame y pinfalls en cada frame)
+
+3. bowling.scoringapp.validate.input.api
+IValidateInput
+
+bowling.scoringapp.validate.input.impl
+ValidateTenPinBowlFile:
+  - Validar no mas de 10 pins, o numeros negativos, formato incorrecto, etc.
+
+4. bowling.scoringapp.generate.score.api
+IGenerateScoring
+
+bowling.scoringapp.generate.score.impl
+GenerateTenPinBowlScoring
+  - Generar scores por cada frame de cada jugador
+
+5. bowling.scoringapp.produce.score.file.api
+IProduceScoreFile
+
+bowling.scoringapp.produce.score.file.impl
+ProduceTenPinBowlScoreFile:
+  - Generar archivo con formato indicado
+
+*** DTOS ***
+bowling.scoringapp.dtos
+PlayerScoreFrame

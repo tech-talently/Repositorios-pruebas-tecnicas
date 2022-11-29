@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="ps-content-wrapper-v0">
+      <p>
+        A company has released a new internal system, and each employee has been
+        assigned a username. Employees are allowed to change their usernames but
+        only in a limited way. More specifically, they can choose letters at two
+        different positions and swap them. For example, the username "bigfish"
+        can be changed to "gibfish" (swapping 'b' and 'g') or "bighisf"
+        (swapping 'f' and 'h'). The manager would like to know which employees
+        can update their usernames so that the new username is smaller in
+        alphabetical order than the original username.
+      </p>
+
+      <p>&nbsp;</p>
+
+      <p>
+        For each username given, return either "YES" or "NO" based on whether
+        that username can be changed (with one swap) to a new one that is
+        smaller in alphabetical order.
+      </p>
+
+      <p>&nbsp;</p>
+
+      <p>
+        <em
+          >Note: For two different strings A and B of the same length, A is
+          smaller than B in alphabetical order when on the first position where
+          A and B differ, A has a smaller letter in alphabetical order than B
+          has.</em
+        >
+      </p>
+
+      <p>&nbsp;</p>
+
+      <p>
+        For example, let's say <em>usernames = ["bee", "superhero", "ace"]</em>.
+        For the first username, "bee", it is not possible to make one swap to
+        change it to a smaller one in alphabetical order, so the answer is "NO".
+        For the second username, "superhero", it <em>is</em> possible get a new
+        username that is smaller in alphabetical order (for example, by swapping
+        letters 's' and 'h' to get "hupersero"), so the answer is "YES".
+        Finally, for the last username "ace", it is not possible to make one
+        swap to change it to a smaller one in alphabetical order, so the answer
+        is "NO". Therefore you would return the array of strings ["NO", "YES",
+        "NO"].
+      </p>
+      &nbsp;
+
+      <p class="section-title">Function Description</p>
+
+      <p>Complete the function <em>possibleChanges</em> in the editor below.</p>
+
+      <p>&nbsp;</p>
+
+      <p><em>possibleChanges</em> has the following parameter(s):</p>
+
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;string <em>usernames[n]</em>:&nbsp; an array of
+        strings denoting the usernames of the employees
+      </p>
+
+      <p>Returns:</p>
+
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;string[n]: an array of strings containing either
+        "YES" or "NO" based on whether the <em>i<sup>th</sup></em> username can
+        be changed with one swap to a new one that is smaller in alphabetical
+        order
+      </p>
+
+      <p>&nbsp;</p>
+
+      <p class="section-title">Constraints</p>
+
+      <ul>
+        <li>
+          <p>1 ≤ <em>n</em>&nbsp; ≤ 10<sup>5</sup></p>
+        </li>
+        <li>
+          <p>
+            The sum of lengths of all usernames does not exceed 10<sup>6</sup>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>usernames[i]</em> consists of only lowercase English letters.
+          </p>
+        </li>
+      </ul>
+
+      <p>&nbsp;</p>
+      <!-- <StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+
+      <details open="">
+        <summary class="section-title">Input Format For Custom Testing</summary>
+
+        <div class="collapsable-details">
+          <p>
+            The first line of input contains an integer, <em>n</em>, denoting
+            the number of employees.
+          </p>
+
+          <p>
+            Each line <em>i</em> of the <em>n</em> subsequent lines (where 0<em>
+              ≤ i &lt; n</em
+            >) contains a string, <em>usernames[i]</em>, denoting the username
+            of the <em>i<sup>th</sup></em> employee.
+          </p>
+        </div>
+      </details>
+      <!-- </StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+
+      <details open="">
+        <summary class="section-title">Sample Case 0</summary>
+
+        <div class="collapsable-details">
+          <p class="section-title">Sample Input For Custom Testing</p>
+
+          <pre>
+1
+        hydra
+        </pre
+          >
+
+          <p class="section-title">Sample Output</p>
+
+          <pre>
+YES
+        </pre
+          >
+
+          <p class="section-title">Explanation</p>
+
+          <p>
+            There is just one username to consider in this case, and it is the
+            username "hydra". One can swap, for example, the last two letters of
+            it to get the new username "hydar". This is smaller in alphabetical
+            order than "hydra", so the answer for this username is "YES"
+            (without quotes).
+          </p>
+        </div>
+      </details>
+
+      <details open="">
+        <summary class="section-title">Sample Case 1</summary>
+
+        <div class="collapsable-details">
+          <p class="section-title">Sample Input For Custom Testing</p>
+
+          <pre>
+3
+        foo
+        bar
+        baz
+        </pre
+          >
+
+          <p class="section-title">Sample Output</p>
+
+          <pre>
+NO
+        YES
+        YES
+        </pre
+          >
+
+          <p class="section-title">Explanation</p>
+
+          <p>
+            There are three usernames to consider in this case. For the first of
+            them, "foo", it is not possible to make one swap to change it to a
+            smaller one in alphabetical order, so the answer is "NO" (without
+            quotes). For the second one, "bar", one can swap the letters "b" and
+            "a" to get the new username "abr", which is smaller in alphabetical
+            order, so the answer is "YES" (without quotes). Similarly, For the
+            third username, "baz", one can swap the letters "b" and "ab" to get
+            the new username "abz", which is smaller in alphabetical order, so
+            the answer is "YES" (without quotes).
+          </p>
+        </div>
+      </details>
+    </div>
+  </body>
+</html>

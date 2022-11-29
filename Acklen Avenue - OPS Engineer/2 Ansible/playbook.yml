@@ -1,0 +1,94 @@
+-
+  name: Play 1
+  hosts: ec2
+  become: yes
+
+  tasks:
+
+    - name: "install nvm"
+      shell: >
+        curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+
+    - name: Update apt repo and cache
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Install node apache2
+      apt:
+        pkg:
+          - nodejs
+          - apache2   
+
+    - name: Install pm2
+      npm:
+        name: pm2
+        global: yes
+
+    - name: create repo directory
+      file:
+        path: /home/ubuntu/repos
+        state: directory
+
+    - name: Clone repo
+      git: 
+        repo: https://github.com/abkunal/Chat-App-using-Socket.io
+        dest: /home/ubuntu/repos
+        clone: yes
+        update: yes
+
+    - name: "install npm"
+      command: npm install
+      args:
+        chdir: /home/ubuntu/repos
+      register: outnetstat 
+
+    - name: "install pm2"
+      command: pm2 start app.js -f
+      args:
+        chdir: /home/ubuntu/repos
+
+    - name: enabled apache mod_rewrite
+      apache2_module: name=rewrite state=present
+      notify:
+        - restart apache2
+
+    - name: setup apache2 virtualhost on port 5000
+      lineinfile: 
+        path: /etc/apache2/sites-available/000-default.conf  
+        insertafter: ^<VirtualHost \*:80>
+        line: ProxyPass / http://localhost:5000/
+        state: present
+
+    - name: "enable apache proxy module"
+      command: a2enmod proxy
+      args:
+        chdir: /etc/apache2/sites-enabled
+              
+    - name: "enable apache proxy_http module"
+      command: a2enmod proxy_http
+      args:
+        chdir: /etc/apache2/sites-enabled
+      notify:
+        - restart apache2
+
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

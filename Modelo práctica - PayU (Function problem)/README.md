@@ -1,0 +1,1 @@
+Resolve this link: https://practice.geeksforgeeks.org/problems/implement-atoi/1?problemType=functional&page=1&sortBy=submissions&company%5B%5D=Payu&query=problemTypefunctionalpage1sortBysubmissionscompany%5B%5DPayu

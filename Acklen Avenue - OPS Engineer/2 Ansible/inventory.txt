@@ -1,0 +1,4 @@
+[ec2]
+[EC2_Public_ip_1] ansible_ssh_private_key_file=[UPDATE~/Documents/ssh/mykey] ansible_user=ubuntu
+[EC2_Public_ip_2] ansible_ssh_private_key_file=[UPDATE~/Documents/ssh/mykey] ansible_user=ubuntu
+

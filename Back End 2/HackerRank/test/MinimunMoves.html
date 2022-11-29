@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=
+    <div id="main-splitpane-left" class="coding-question__left-pane">
+      <section class="question-view__title-wrapper">
+        <h1 class="question-view__title">1. Minimum Moves</h1>
+      </section>
+      <section class="question-view__instruction">
+        <div class="candidate-rich-text">
+          <div id="1jal1efmrgc-instruction">
+            <style type="text/css">
+              .ps-content-wrapper-v0 div {
+                margin: 0 auto;
+                overflow: auto;
+              }
+              .ps-content-wrapper-v0 div.preheader {
+                display: none;
+              }
+              .ps-content-wrapper-v0 p {
+                white-space: pre-wrap;
+                padding-left: 4px;
+                padding-right: 4px;
+                padding-top: 0px;
+                padding-bottom: 2px;
+              }
+              .ps-content-wrapper-v0 p.section-title {
+                font-weight: bold;
+                padding-bottom: 0px;
+              }
+              .ps-content-wrapper-v0 ol.plain-list,
+              .ps-content-wrapper-v0 ul.plain-list {
+                list-style-type: none;
+                padding: 4px;
+              }
+              .ps-content-wrapper-v0 li {
+                white-space: normal;
+                margin-top: 4px;
+                margin-bottom: 4px;
+              }
+              .ps-content-wrapper-v0 code {
+                color: black;
+                background: transparent;
+                font-weight: normal;
+                font-size: 1em;
+              }
+              .ps-content-wrapper-v0 pre {
+                background-color: #f4faff;
+                border: 0;
+                border-radius: 2px;
+                margin: 8px;
+                padding: 10px;
+              }
+              .ps-content-wrapper-v0 figure {
+                background-color: transparent;
+                display: table;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+              }
+              .ps-content-wrapper-v0 figcaption {
+                text-align: center;
+                display: table-caption;
+                caption-side: bottom;
+                margin-top: 4px;
+                margin-bottom: 4px;
+              }
+              .ps-content-wrapper-v0 img {
+                width: auto;
+                max-width: 100%;
+                height: auto;
+              }
+              .ps-content-wrapper-v0 details {
+                background-color: transparent;
+                padding-left: 4px;
+                padding-right: 4px;
+                padding-top: 0px;
+                padding-bottom: 2px;
+              }
+              .ps-content-wrapper-v0 details summary {
+                background-color: #39424e;
+                color: white;
+                font-weight: bold;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                padding: 8px;
+              }
+              .ps-content-wrapper-v0 details div.collapsable-details {
+                margin: 0 auto;
+                padding-left: 4px;
+                padding-right: 4px;
+                padding-top: 0px;
+                padding-bottom: 2px;
+                overflow: auto;
+              }
+              .ps-content-wrapper-v0 details div.collapsable-details pre {
+                margin-left: 4px;
+                margin-right: 4px;
+                margin-top: 4px;
+                margin-bottom: 4px;
+              }
+              .ps-content-wrapper-v0 table {
+                border: 1px solid black;
+                border-collapse: collapse;
+                border-color: darkgray;
+                margin: 0 auto;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                padding: 8px;
+                width: 96%;
+                table-layout: fixed;
+              }
+              .ps-content-wrapper-v0 table tbody tr th,
+              .ps-content-wrapper-v0 table tbody tr td {
+                font-weight: bold;
+                white-space: nowrap;
+                text-align: center;
+                vertical-align: middle;
+                border: 1px solid black;
+                border-color: darkgray;
+                padding: 8px;
+              }
+              .ps-content-wrapper-v0 table tbody tr th.description {
+                width: 60%;
+              }
+              .ps-content-wrapper-v0 table tbody tr td {
+                font-weight: normal;
+                white-space: normal;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr:first-child
+                td.headers {
+                border-bottom-width: 2px;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr:last-child
+                td {
+                border-top-width: 2px;
+                border-top-color: darkgray;
+              }
+              .ps-content-wrapper-v0 table.function-params tbody tr td.headers {
+                width: 25%;
+                font-weight: bold;
+                text-align: center;
+                border: 1px solid black;
+                border-right-width: 2px;
+                border-color: darkgray;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell {
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table {
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+                margin: 0px;
+                border: 0;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table
+                tbody
+                tr
+                td.code {
+                white-space: normal;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table
+                tbody
+                tr
+                th {
+                border-top: 0;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table
+                tbody
+                tr
+                th:first-child {
+                border-left: 0;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table
+                tbody
+                tr
+                th:last-child {
+                border-right: 0;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table
+                tbody
+                tr:last-child
+                td {
+                border-bottom: 0;
+                border-top-width: 1px;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table
+                tbody
+                tr
+                td:first-child {
+                border-left: 0;
+              }
+              .ps-content-wrapper-v0
+                table.function-params
+                tbody
+                tr
+                td.params-table-cell
+                table.params-table
+                tbody
+                tr
+                td:last-child {
+                border-right: 0;
+              }
+              .ps-content-wrapper-v0 .left {
+                text-align: left;
+              }
+              .ps-content-wrapper-v0 .right {
+                text-align: right;
+              }
+              .ps-content-wrapper-v0 .code {
+                font-family: monospace;
+                white-space: nowrap;
+              }
+              .ps-content-wrapper-v0 .json-object-array ol,
+              .ps-content-wrapper-v0 .json-object-array ol ul {
+                margin-top: 0px;
+                padding-left: 14px;
+              }
+              .json-object-array li {
+                float: left;
+                margin-right: 30px;
+                margin-left: 10px;
+              }
+              .json-object-array pre {
+                padding: 4px;
+                margin-left: 0px;
+              }
+            </style>
+            <div class="ps-content-wrapper-v0">
+              <div class="ps-content">
+                <div class="preheader" style="display: none">
+                  Determine the number of times each digit in the integers of an
+                  array must be incremented or decremented to make it equal to
+                  another array.
+                </div>
+
+                <p>
+                  There are two arrays of integers, <em>arr1</em> and
+                  <em>arr2</em>. One move is defined as an increment or
+                  decrement one of element in an&nbsp;&nbsp;&nbsp;&nbsp; array.
+                  Determine the number of moves will it take to match the array
+                  <em>arr1</em> with the array <em>arr2</em>. No reordering of
+                  the digits is allowed.
+                </p>
+
+                <p>&nbsp;</p>
+
+                <p><strong>Example</strong></p>
+
+                <p>arr1 = <em>[123, 543]</em></p>
+
+                <p>arr2 = <em>[321, 279]</em></p>
+
+                <p>&nbsp;</p>
+
+                <ul>
+                  <li>
+                    Match arr1[0]=123 with arr2[0]=321.
+                    <ul>
+                      <li>Increment 1 twice to get 3 (2 moves)</li>
+                      <li>Decrement 3 twice to get 1 (2 moves).</li>
+                      <li>4 moves are needed to match 123 with 321.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Match arr1[1]=543 with arr2[1]=279.
+                    <ul>
+                      <li>Decrement 5 three times to get 2 (3 moves)</li>
+                      <li>Increment 4 three times to get 7 (3 moves)</li>
+                      <li>Increment 3 six times to get 9 (6 moves).</li>
+                      <li>12 moves are needed to match 543 with 279.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    16 total moves are needed to match the arrays arr1 and arr2.
+                  </li>
+                </ul>
+
+                <p>&nbsp;</p>
+
+                <p>&nbsp;</p>
+                <!--
+        <p class="section-title">Function Description</p>
+        
+        <p>Complete the <em>minimumMoves</em> function in the editor below. It has the following two parameters:</p>
+        
+        <table class="function-params">
+            <tbody>
+                <tr>
+                    <td class="headers">Parameters</td>
+                    <td class="params-table-cell">
+                    <table class="params-table">
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th class="description">Description</th>
+                            </tr>
+                            <tr>
+                                <td class="code">a</td>
+                                <td class="code">integer array</td>
+                                <td class="left">Andrea&#39;s array</td>
+                            </tr>
+                            <tr>
+                                <td class="code">m</td>
+                                <td class="code">integer array</td>
+                                <td class="left">Maria&#39;s array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="headers">Return</td>
+                    <td class="left">integer number of moves to convert Andrea&#39;s array to match Maria&#39;s</td>
+                </tr>
+            </tbody>
+        </table>
+        -->
+
+                <p><strong>Function Description </strong></p>
+
+                <p>
+                  Complete the function <em>minimumMoves</em> in the editor
+                  below.
+                </p>
+
+                <p>&nbsp;</p>
+
+                <p>minimumMoves has the following parameter(s):</p>
+
+                <p>
+                  &nbsp;&nbsp;&nbsp;<em>int&nbsp;arr1[n]:</em>&nbsp; array to
+                  modify
+                </p>
+
+                <p>
+                  &nbsp;&nbsp;&nbsp;<em>int&nbsp;arr2[n]:</em>&nbsp; array to
+                  match
+                </p>
+
+                <p>&nbsp;</p>
+
+                <p>Returns:</p>
+
+                <p>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<em>int:</em> te minimum number of
+                  moves to match <em>arr1</em> with <em>arr2</em>
+                </p>
+
+                <p>&nbsp;</p>
+
+                <p>Constraints</p>
+
+                <ul>
+                  <li>
+                    <em>1 ≤ n ≤ 10<sup>5</sup></em>
+                  </li>
+                  <li>
+                    <em>1 ≤ arr1[i], arr2[i]&nbsp;≤ 10<sup>9</sup></em>
+                  </li>
+                  <li>
+                    The lengths of <em>arr1</em> and <em>arr2</em> are equal,
+                    <em>|arr1| = |arr2|</em>.
+                  </li>
+                  <li>
+                    The elements <em>arr1[i]</em>&nbsp;and
+                    <em>arr2[i]</em>&nbsp;have an equal number of digits.
+                  </li>
+                </ul>
+
+                <p>&nbsp;</p>
+                <!--       <StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+
+                <details>
+                  <summary class="section-title">
+                    Input Format for Custom Testing
+                  </summary>
+
+                  <div class="collapsable-details">
+                    <p>
+                      The first line contains an integer <em>n</em>, the size of
+                      the array <em>arr1.</em>
+                    </p>
+
+                    <p>
+                      The next <em>n</em> lines each contain an element
+                      <em>arr1[i]</em> where 0 ≤ i &lt; n.
+                    </p>
+
+                    <p>
+                      The next line contains an integer <em>n</em>, the size of
+                      the array <em>arr2</em>.
+                    </p>
+
+                    <p>
+                      The next <em>n</em> lines each contain an element
+                      <em>arr2[i]</em> where 0 ≤ i &lt; n.
+                    </p>
+                  </div>
+                </details>
+
+                <details open="open">
+                  <summary class="section-title">Sample Case 0</summary>
+
+                  <div class="collapsable-details">
+                    <p class="section-title">Sample Input</p>
+
+                    <pre>
+STDIN&nbsp;&nbsp;&nbsp;&nbsp; Function 
+        -----&nbsp;&nbsp;&nbsp;&nbsp; -------- 
+        2     →&nbsp;  n = 2 
+        1234  →&nbsp;  arr1 = [1234, 4321]
+        4321
+        2     →&nbsp;  n = 2 
+        2345  →&nbsp;  arr2 = [2345, 3214] 
+        3214
+        </pre
+                    >
+
+                    <p class="section-title">Sample Output</p>
+
+                    <pre>
+10
+        </pre
+                    >
+
+                    <p class="section-title">Explanation</p>
+
+                    <p class="section-title">&nbsp;</p>
+
+                    <ul>
+                      <li>
+                        Match arr1[0]=1234 with arr2[0]=2345.
+                        <ul>
+                          <li>Increment 1 once to get 2 (1&nbsp;move)</li>
+                          <li>Increment 2 once to get 3 (1&nbsp;move)</li>
+                          <li>Increment 3 once to get 4 (1&nbsp;move)&nbsp;</li>
+                          <li>Increment 4 once to get 5 (1 move).</li>
+                          <li>4 moves are needed to match 1234 with 2345.</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Match arr1[1]=4321 with arr2[1]=3214.
+                        <ul>
+                          <li>
+                            Decrement 4 once&nbsp;to get 3&nbsp;(1&nbsp;move)
+                          </li>
+                          <li>
+                            Decrement 3&nbsp;once&nbsp;to get
+                            2&nbsp;(1&nbsp;move)
+                          </li>
+                          <li>Decrement 2&nbsp;once&nbsp;to get 1 (1 move)</li>
+                          <li>
+                            Increment 1 three times to get 3 (3&nbsp;moves)
+                          </li>
+                          <li>6 moves are needed to match 4321 with 3214.</li>
+                        </ul>
+                      </li>
+                      <li>
+                        6+4=10&nbsp;total moves are needed to match the arrays
+                        <em>arr1</em> and <em>arr2</em>.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <div class="ps-content-wrapper-v0">
+                  <div class="ps-content">
+                    <div class="preheader" style="display: none">
+                      Determine the number of times each digit in the integers
+                      of an array must be incremented or decremented to make it
+                      equal to another array.
+                    </div>
+
+                    <details>
+                      <summary class="section-title">Sample Case 1</summary>
+
+                      <div class="collapsable-details">
+                        <p class="section-title">Sample Input</p>
+
+                        <pre>
+STDIN&nbsp;&nbsp;&nbsp;&nbsp; Function &nbsp;&nbsp;&nbsp;&nbsp;
+        -----&nbsp;&nbsp;&nbsp;&nbsp; -------- 
+        1     →&nbsp;  n = 1 
+        2468  →&nbsp;  arr1 = [2468]
+        1     →&nbsp;  n = 1 
+        8642  →&nbsp;  arr2 = [8642] 
+        
+        </pre
+                        >
+
+                        <p class="section-title">Sample Output</p>
+
+                        <pre>
+16
+        </pre
+                        >
+
+                        <p class="section-title">Explanation</p>
+
+                        <ul>
+                          <li>
+                            Match arr1[0]=2468 with arr2[0]=8642.
+                            <ul>
+                              <li>
+                                Increment 2 six times to get 8 (6&nbsp;moves)
+                              </li>
+                              <li>Increment 4 twice to get 6 (2&nbsp;moves)</li>
+                              <li>Decrement 6 twice to get 4 (2&nbsp;moves)</li>
+                              <li>
+                                Decrement 8 six times to get 2&nbsp;
+                                (6&nbsp;moves).
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            16 moves are needed to match the arrays arr1 and
+                            arr2.
+                          </li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+                <!-- class="ps-content-wrapper-v0" -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    , initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>

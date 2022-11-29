@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<div id="main-splitpane-left" class="coding-question__left-pane"><section class="question-view__title-wrapper"><h1 class="question-view__title">1. JavaScript: Joined Logger</h1></section><section class="question-view__instruction"><div class="candidate-rich-text"><div id="ms8ge5m9g5-instruction"><p>In this challenge, each message object has two properties:&nbsp;</p>
+
+        <ul>
+            <li>
+            <p>property&nbsp;<em>level</em> having an integer value</p>
+            </li>
+            <li>
+            <p>property&nbsp;<em>text</em> having a string value</p>
+            </li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+        <p>For example:</p>
+        
+        <p><span style="color:#000000;"><code>msg = { level: 2, text: "foo" }</code></span></p>
+        
+        <p>&nbsp;</p>
+        
+        <p>There is an implementation of a simple logger function provided that:</p>
+        
+        <ul>
+            <li>
+            <p>takes a message object as an argument.</p>
+            </li>
+            <li>
+            <p>writes the text of the message to the defined output.</p>
+            </li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+        <p>Implement a function <em>joinedLogger</em> that:</p>
+        
+        <ol>
+            <li>
+            <p>takes two arguments: integer <em>level</em> and string <em>separator.</em></p>
+            </li>
+            <li>
+            <p>returns a new function, <em>f</em>, such that <em>f</em> takes a variable number of message objects.</p>
+        
+            <ul>
+                <li>
+                <p>The function&nbsp;<em>f</em> uses the logger to write joined <em>text</em> values&nbsp;of messages that have a <em>level</em>&nbsp;value greater than or equal to the <em>level</em> parameter.</p>
+                </li>
+                <li>
+                <p>The <em>text</em> values&nbsp;must be joined by the <em>separator</em> string parameter, in the order they are passed to the function.</p>
+                </li>
+            </ul>
+            </li>
+        </ol>
+        
+        <p>&nbsp;</p>
+        
+        <p>For example, let's say there are 3 defined messages:</p>
+        
+        <p>&nbsp;</p>
+        
+        <p><code>msg1 = { level: 10, text: "foo" }</code></p>
+        
+        <p><code>msg2 = { level: 20, text: "bar" }</code></p>
+        
+        <p><code>msg3 = { level: 30, text: "baz" }</code></p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Calling <em>joinedLogger</em>(15, ';') must return a function <em>f</em>, such that calling <em>f</em>(msg1, msg2, msg3) causes the logger to write the string "bar;baz" to the defined output.&nbsp; The <em>level</em> passed to <em>joinedLogger</em> is 15, and the separator is ';'.&nbsp; Only ms2 and msg3 have a level greater than or equal to 15, so the text of those messages, "bar" and "baz", is joined with the ';' separator and&nbsp;written to the defined output by the logger.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Implementation of the function&nbsp;will be tested by a provided code stub on several input files. Each input file contains parameters for <em>joinedLogger,</em> followed by several values to construct messages to log. First, the <em>joinedLogger</em>&nbsp;function will be called with the given parameters. Then, the returned function will be called with all the messages constructed from the values given in the input. The&nbsp;result of the latter call&nbsp;will be printed to the standard output by the provided code.&nbsp;<br>
+        &nbsp;</p>
+        
+        <div class="ps-content-wrapper-v0">
+        <!--       <StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+        <details><summary class="section-title">Input Format Format for Custom Testing</summary>
+        
+        <div class="collapsable-details">
+        <p>In the first line, there are two space-separated values: integer <em>level</em> and string <em>separator,</em><i> denoting the parameters for the </i><em>joinedLogger</em><i><em> </em>function.</i></p>
+        
+        <p><i>In the second line, there is an integer, </i><em>n,</em>&nbsp;denoting<i> the number of messages.</i></p>
+        
+        <p>Each of the next <em>n</em> lines contains two space-separated values: integer <em>level</em> and string <em>text,</em> denoting the level and text properties of a single message.</p>
+        </div>
+        </details>
+        <!--        </StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+        
+        <details open="open"><summary class="section-title">Sample Case 0</summary>
+        
+        <div class="collapsable-details">
+        <p class="section-title">Sample Input</p>
+        
+        <pre>STDIN&nbsp;&nbsp;&nbsp;  Function
+        -----&nbsp;&nbsp;&nbsp;  --------
+        21 ;&nbsp;&nbsp;&nbsp;&nbsp;→ level = 21, separator = ';'
+        4&nbsp;&nbsp;&nbsp;&nbsp;   → n = 4
+        40 foo&nbsp;&nbsp;→ msg0.level = 40, msg0.text = 'foo'
+        90 bar&nbsp;&nbsp;→ msg1.level = 90, msg1.text = 'bar'
+        20 baz&nbsp;&nbsp;→ msg2.level = 20, msg2.text = 'baz'
+        21 bax&nbsp;&nbsp;→ msg3.level = 21, msg3.text = 'bax'
+        </pre>
+        
+        <p class="section-title">Sample Output</p>
+        
+        <pre>foo;bar;bax
+        </pre>
+        
+        <p class="section-title">Explanation</p>
+        
+        <p>The first, the second, and fourth messages have levels greater than or equal to 21. Their text values, joined with ';', are written by the logger to the defined output.</p>
+        </div>
+        </details>
+        
+        <details open=""><summary class="section-title">Sample Case 1</summary>
+        
+        <div class="collapsable-details">
+        <p class="section-title">Sample Input</p>
+        
+        <pre>STDIN&nbsp;&nbsp;&nbsp;&nbsp; Function
+        -----&nbsp;&nbsp;&nbsp;&nbsp; --------
+        10 -&nbsp;&nbsp;&nbsp;&nbsp;  → level = 10, separator = '-'
+        2&nbsp;&nbsp;&nbsp;&nbsp;     → n = 2
+        20 item1&nbsp;&nbsp;→ msg0.level = 20, msg0.text = 'item1'
+        17 item2&nbsp;&nbsp;→ msg1.level = 17, msg0.text = 'item2'
+        </pre>
+        
+        <p class="section-title">Sample Output</p>
+        
+        <pre>item1-item2
+        </pre>
+        
+        <p class="section-title">Explanation</p>
+        
+        <p>Both messages have levels greater than or equal to 10. Their text values, joined with '-', are written by the logger to the defined output.</p>
+        </div>
+        </details>
+        </div>
+        <style type="text/css"><p><em>1 ≤ |source| ≤ 10^6 </em></p>.ps-content-wrapper-v0 div { margin: 0 auto; overflow: auto; } .ps-content-wrapper-v0 div.preheader { display: none; } .ps-content-wrapper-v0 p { white-space: pre-wrap; padding-left: 4px; padding-right: 4px; padding-top: 0px; padding-bottom: 2px; } .ps-content-wrapper-v0 p.section-title { font-weight: bold; padding-bottom: 0px; } .ps-content-wrapper-v0 ol.plain-list, .ps-content-wrapper-v0 ul.plain-list { list-style-type: none; padding: 4px; } .ps-content-wrapper-v0 li { white-space: normal; margin-top: 4px; margin-bottom: 4px; } .ps-content-wrapper-v0 code { color: black; } .ps-content-wrapper-v0 pre { background-color: #f4faff; border: 0; border-radius: 2px; margin: 8px; padding: 10px; } .ps-content-wrapper-v0 figure { background-color: transparent; display: table; margin-top: 8px; margin-bottom: 8px; text-align: center; margin-left: auto; margin-right: auto; } .ps-content-wrapper-v0 figcaption { text-align: center; display: table-caption; caption-side: bottom; margin-top: 4px; margin-bottom: 4px; } .ps-content-wrapper-v0 img { width: auto; max-width: 100%; height: auto; } .ps-content-wrapper-v0 details { background-color: transparent; padding-left: 4px; padding-right: 4px; padding-top: 0px; padding-bottom: 2px; } .ps-content-wrapper-v0 details summary { background-color: #39424e; color: white; font-weight: bold; margin-top: 4px; margin-bottom: 4px; padding: 8px; } .ps-content-wrapper-v0 details div.collapsable-details { margin: 0 auto; padding-left: 4px; padding-right: 4px; padding-top: 0px; padding-bottom: 2px; overflow: auto; } .ps-content-wrapper-v0 details div.collapsable-details pre { margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; } .ps-content-wrapper-v0 table { border: 1px solid black; border-collapse: collapse; border-color: darkgray; margin: 0 auto; margin-top: 8px; margin-bottom: 8px; padding: 8px; width: 96%; table-layout: fixed; } .ps-content-wrapper-v0 table tbody tr th, .ps-content-wrapper-v0 table tbody tr td { font-weight: bold; white-space: nowrap; text-align: center; vertical-align: middle; border: 1px solid black; border-color: darkgray; padding: 8px; } .ps-content-wrapper-v0 table tbody tr th.description { width: 60%; } .ps-content-wrapper-v0 table tbody tr td { font-weight: normal; white-space: normal; } .ps-content-wrapper-v0 table.function-params tbody tr:first-child td.headers { border-bottom-width: 2px; } .ps-content-wrapper-v0 table.function-params tbody tr:last-child td { border-top-width: 2px; border-top-color: darkgray; } .ps-content-wrapper-v0 table.function-params tbody tr td.headers { width: 25%; font-weight: bold; text-align: center; border: 1px solid black; border-right-width: 2px; border-color: darkgray; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell { width: 100%; height: 100%; padding: 0px; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table { width: 100%; height: 100%; padding: 0px; margin: 0px; border: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr td.code { white-space: normal; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr th { border-top: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr th:first-child { border-left: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr th:last-child { border-right: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr:last-child td { border-bottom: 0; border-top-width: 1px; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr td:first-child { border-left: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr td:last-child { border-right: 0; } .ps-content-wrapper-v0 .left { text-align: left; } .ps-content-wrapper-v0 .right { text-align: right; } .ps-content-wrapper-v0 .code { font-family: monospace; white-space: nowrap; } .ps-content-wrapper-v0 .json-object-array ol, .ps-content-wrapper-v0 .json-object-array ol ul { margin-top: 0px; padding-left: 14px; } .json-object-array li { float: left; margin-right: 30px; margin-left: 10px; } .json-object-array pre { padding: 4px; margin-left: 0px; } code { color: black !important; font-size: 0.9em; }
+        </style>
+        </div></div></section></div>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

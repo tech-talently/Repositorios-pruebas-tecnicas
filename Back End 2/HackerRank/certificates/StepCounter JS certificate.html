@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main-splitpane-left" class="coding-question__left-pane"><section class="question-view__title-wrapper"><h1 class="question-view__title">2. JavaScript: Step Counter</h1></section><section class="question-view__instruction"><div class="candidate-rich-text"><div id="4838mjiqoi1-instruction"><p>In this challenge, you are provided with the implementation of a simple counter object:</p>
+
+        <p>&nbsp;</p>
+        
+        <pre><code class="language-javascript">const counter = (function counter() {
+          let value = 0;
+          return {
+            getValue: function() {
+              return value;
+            },
+            changeBy: function(k) {
+              value += k;
+            },
+          }
+        })();</code></pre>
+        
+        <p>&nbsp;</p>
+        
+        <p>Your task is to implement a function <em>stepCounter</em>&nbsp;that:</p>
+        
+        <ul>
+            <li>
+            <p>takes a single parameter <em>k</em></p>
+            </li>
+            <li>
+            <p>returns a new object, representing a step counter with the initial value of 0 and with three methods:</p>
+        
+            <ul>
+                <li>
+                <p>increment() : increments the current value by <em>k</em></p>
+                </li>
+                <li>
+                <p>decrement() : decrements the current value by <em>k</em></p>
+                </li>
+                <li>
+                <p>getValue() : returns the current value</p>
+                </li>
+            </ul>
+            </li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+        <p>Your implementation must encapsulate the provided counter object and use it for its implementation. The object returned by <em>stepCounter</em> must not have a&nbsp;<em>changeBy</em> property.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Your implementation of the function&nbsp;will be tested by a provided code stub on several input files. Each input file contains a parameter&nbsp;for <em>stepCounter,</em> followed by several values denoting the operations to perform on the object returned by <em>stepCounter</em>. The&nbsp;results of performing the operations will be printed to the standard output by the provided code.&nbsp;<br>
+        &nbsp;</p>
+        
+        <div class="ps-content-wrapper-v0">
+        <!--       <StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+        <details><summary class="section-title">Input Format Format for Custom Testing</summary>
+        
+        <div class="collapsable-details">
+        <p>In the first line, there is a single integer, <em>k</em><i> denoting the parameter for the </i><em>stepCounter</em><i> function.</i></p>
+        
+        <p><i>In the second line, there is integer, </i><em>n</em>,<i> denoting the number of operations to perform.</i></p>
+        
+        <p><i>Next, </i><em>n</em><i> lines follow. Each of them contains a single character, either +, -, or ? denoting respectively calling the </i><em>increment()</em><i>, </i><em>decrement()</em><i>, and </i><em>getValue()</em><i> methods on the objected returned by </i><em>stepCounter.</em></p>
+        </div>
+        </details>
+        <!--        </StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+        
+        <details><summary class="section-title">Sample Case 0</summary>
+        
+        <div class="collapsable-details">
+        <p class="section-title">Sample Input</p>
+        
+        <pre>STDIN &nbsp; &nbsp;Function
+        ----- &nbsp; &nbsp;--------
+        1     →  parameter k = 1
+        4     →  number of operations, n = 1
+        +     →  increment()
+        ?     →  getValue()
+        -     →  decrement()
+        ?     →  getValue()
+        </pre>
+        
+        <p class="section-title">Sample Output</p>
+        
+        <pre>1
+        0
+        </pre>
+        
+        <p class="section-title">Explanation</p>
+        
+        <p>In this test, the <em>k</em> parameter for <em>stepCounter</em> is 1, so each <em>increment </em>must increment the value by 1 and each <em>decrement </em>must decrement the value by 1.<i> Initially, the counter has the value 0. There are 4 operations to be performed. The first of them increments the counter, so it has the value 1 now. The second prints the current value of the counter. The third decrements the counter, so it has the value 0 now. The fourth prints the current value of the counter.</i></p>
+        </div>
+        </details>
+        
+        <details><summary class="section-title">Sample Case 1</summary>
+        
+        <div class="collapsable-details">
+        <p class="section-title">Sample Input</p>
+        
+        <pre>
+        STDIN &nbsp; &nbsp;Function
+        ----- &nbsp; &nbsp;--------
+        2     →  parameter k = 2
+        5     →  number of operations, n = 5
+        -     →  decrement()
+        ?     →  getValue()
+        +     →  increment()
+        +     →  increment()
+        ?     →  getValue()
+        </pre>
+        
+        <p class="section-title">Sample Output</p>
+        
+        <pre>-2
+        2
+        </pre>
+        
+        <p class="section-title">Explanation</p>
+        
+        <p>In this test, the <em>k</em> parameter for <em>stepCounter</em> is 2, so each <em>increment </em>must increment the value by 2 and each <em>decrement </em>must decrement the value by 2.<i> Initially, the counter has the value 0. There are 5 operations to be performed. The first of them decrements the counter, so it has the value -2 now. The second prints the current value of the counter. The third increments the counter, so it has the value 0 now. The fourth increments the counter, so it has the value 2 now. The fifth prints the current value of the counter.</i></p>
+        </div>
+        </details>
+        </div>
+        <style type="text/css"><p><em>1 ≤ |source| ≤ 10^6 </em></p>.ps-content-wrapper-v0 div { margin: 0 auto; overflow: auto; } .ps-content-wrapper-v0 div.preheader { display: none; } .ps-content-wrapper-v0 p { white-space: pre-wrap; padding-left: 4px; padding-right: 4px; padding-top: 0px; padding-bottom: 2px; } .ps-content-wrapper-v0 p.section-title { font-weight: bold; padding-bottom: 0px; } .ps-content-wrapper-v0 ol.plain-list, .ps-content-wrapper-v0 ul.plain-list { list-style-type: none; padding: 4px; } .ps-content-wrapper-v0 li { white-space: normal; margin-top: 4px; margin-bottom: 4px; } .ps-content-wrapper-v0 code { color: black; } .ps-content-wrapper-v0 pre { background-color: #f4faff; border: 0; border-radius: 2px; margin: 8px; padding: 10px; } .ps-content-wrapper-v0 figure { background-color: transparent; display: table; margin-top: 8px; margin-bottom: 8px; text-align: center; margin-left: auto; margin-right: auto; } .ps-content-wrapper-v0 figcaption { text-align: center; display: table-caption; caption-side: bottom; margin-top: 4px; margin-bottom: 4px; } .ps-content-wrapper-v0 img { width: auto; max-width: 100%; height: auto; } .ps-content-wrapper-v0 details { background-color: transparent; padding-left: 4px; padding-right: 4px; padding-top: 0px; padding-bottom: 2px; } .ps-content-wrapper-v0 details summary { background-color: #39424e; color: white; font-weight: bold; margin-top: 4px; margin-bottom: 4px; padding: 8px; } .ps-content-wrapper-v0 details div.collapsable-details { margin: 0 auto; padding-left: 4px; padding-right: 4px; padding-top: 0px; padding-bottom: 2px; overflow: auto; } .ps-content-wrapper-v0 details div.collapsable-details pre { margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; } .ps-content-wrapper-v0 table { border: 1px solid black; border-collapse: collapse; border-color: darkgray; margin: 0 auto; margin-top: 8px; margin-bottom: 8px; padding: 8px; width: 96%; table-layout: fixed; } .ps-content-wrapper-v0 table tbody tr th, .ps-content-wrapper-v0 table tbody tr td { font-weight: bold; white-space: nowrap; text-align: center; vertical-align: middle; border: 1px solid black; border-color: darkgray; padding: 8px; } .ps-content-wrapper-v0 table tbody tr th.description { width: 60%; } .ps-content-wrapper-v0 table tbody tr td { font-weight: normal; white-space: normal; } .ps-content-wrapper-v0 table.function-params tbody tr:first-child td.headers { border-bottom-width: 2px; } .ps-content-wrapper-v0 table.function-params tbody tr:last-child td { border-top-width: 2px; border-top-color: darkgray; } .ps-content-wrapper-v0 table.function-params tbody tr td.headers { width: 25%; font-weight: bold; text-align: center; border: 1px solid black; border-right-width: 2px; border-color: darkgray; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell { width: 100%; height: 100%; padding: 0px; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table { width: 100%; height: 100%; padding: 0px; margin: 0px; border: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr td.code { white-space: normal; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr th { border-top: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr th:first-child { border-left: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr th:last-child { border-right: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr:last-child td { border-bottom: 0; border-top-width: 1px; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr td:first-child { border-left: 0; } .ps-content-wrapper-v0 table.function-params tbody tr td.params-table-cell table.params-table tbody tr td:last-child { border-right: 0; } .ps-content-wrapper-v0 .left { text-align: left; } .ps-content-wrapper-v0 .right { text-align: right; } .ps-content-wrapper-v0 .code { font-family: monospace; white-space: nowrap; } .ps-content-wrapper-v0 .json-object-array ol, .ps-content-wrapper-v0 .json-object-array ol ul { margin-top: 0px; padding-left: 14px; } .json-object-array li { float: left; margin-right: 30px; margin-left: 10px; } .json-object-array pre { padding: 4px; margin-left: 0px; } code { color: black !important; font-size: 0.9em; }
+        </style>
+        </div></div></section></div>
+</body>
+</html>
