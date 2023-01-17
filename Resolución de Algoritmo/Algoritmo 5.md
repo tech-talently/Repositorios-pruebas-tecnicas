@@ -1,0 +1,1 @@
+Resolve this link: https://docs.google.com/document/d/1T_Sjz433a5Sm8irnBZrwV11VrOv0eSog84Nz_ILH_MA/edit 
