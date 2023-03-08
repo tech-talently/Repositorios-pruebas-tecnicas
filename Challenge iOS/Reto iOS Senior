@@ -1,0 +1,53 @@
+Estimado Talento,
+
+Como siguiente etapa de evaluación tendremos el reto técnico, en el cual evaluaremos su perfil.
+
+El plazo de entrega es el día 22-04-2022a las 23:59 horas mediante un repositorio.
+
+El desafío consiste en desarrollar un proyecto de software para evaluar tus habilidades técnicas y forma de desarrollar. No buscamos que llegues con la app completa, ni tampoco que tengas un 100% de cobertura en tu código.
+
+Queremos que nos cuentes cómo enfrentaste el desafío, los problemas que tuviste que resolver y hasta donde pudiste llegar. Nos interesa conocer tu forma de pensar más que tu rapidez para implementar.
+
+Sobre la app
+Construye una app de peliculas, que sea capaz de lo siguiente:
+
+Mostrar una pantalla para realizar un login (usuario, password) y realizar las validaciones correspondientes a los inputs.
+No es necesario consumir algún WS, internamente validar estos datos. user: Admin - password: Password*123.
+Al pasar del login, mostrar resultados de las películas con paginación (20 ítems por página).
+Seleccionar un ítem de la búsqueda y mostrar el detalle de la película incluyendo:
+Poster 120x200 (poster_path).
+Nombre de la película (title).
+Nota de la película (vote_average).
+Fecha de lanzamiento (release_date).
+Resumen de la película (overview).
+Almacenar las películas buscadas y poder cargarlas nuevamente en caso de no tener conexión a internet.
+Manejar errores con conexión a la api.
+Usar animaciones y transiciones entre vistas.
+Sobre el desarrollo de la app
+
+Utiliza Clean Architecture como arquitectura.
+Utilizar Swift.
+Utilizar MVVM.
+Utilizar CoreData.
+Implementar pruebas unitarias.
+Selecciona bibliotecas que te ayuden a resolver el problema y justifica su uso.
+Elige un sistema de control de versiones y úsalo como si estuvieras en el trabajo. Queremos ver tus commits y tu proceso de desarrollo.
+
+Publicarlo en GitHub y enviarnos el link.
+
+Sobre las apis
+
+Api para visualizar las películas: dar clic : https://api.themoviedb.org/3/movie/upcoming?page=1&api_key=f46b58478f489737ad5a4651a4b25079
+
+
+Url completa de las imágenes: 
+
+https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg
+https://image.tmdb.org/t/p/w500/srYya1ZlI97Au4jUYAktDe3avyA.jpg
+
+Documentación de API de películas: https://www.themoviedb.org/documentation/api
+
+Nota: De preferencia crear un api_key propio
+
+Tienes 2 días para completar el desafío ¡Te esperamos!
+
