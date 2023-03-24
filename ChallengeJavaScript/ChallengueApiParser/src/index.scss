@@ -1,0 +1,21 @@
+* {
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+      box-sizing: inherit;
+  }
+}
+
+html {
+  font-size: 16px;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  background-color: #f5f6f7;
+  color: #424242;
+}
